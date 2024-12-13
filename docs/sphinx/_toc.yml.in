@@ -11,6 +11,8 @@ subtrees:
   - caption: Installation
     entries:
       - file: installation/kubernetes-helm
+      - file: installation/openshift-helm
+      - file: installation/openshift-olm    
       - file: uninstallation/uninstallation
   - caption: Driver Management
     entries:
@@ -27,3 +29,8 @@ subtrees:
     entries:
       - file: specialized_networks/airgapped-install
       - file: specialized_networks/http-proxy
+  - caption: Contributing
+    entries:
+      - file: contributing/developer-guide
+      - file: contributing/documentation-standards
+

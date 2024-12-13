@@ -21,6 +21,10 @@ The [Node Feature Discovery (NFD)](https://github.com/kubernetes-sigs/node-featu
 - Automatic node labeling with `feature.node.kubernetes.io/amd-gpu: "true"`
 - Hardware capability discovery and reporting
 
+```{note}
+OpenShift clusters use a [specialized NFD Operator](https://github.com/openshift/cluster-nfd-operator) that includes Red Hat optimizations for OpenShift environments.
+```
+
 ### Kernel Module Management (KMM)
 
 The [Kernel Module Management (KMM) Operator](https://github.com/kubernetes-sigs/kernel-module-management) handles the lifecycle of GPU driver kernel modules. Its responsibilities include:
@@ -31,6 +35,7 @@ The [Kernel Module Management (KMM) Operator](https://github.com/kubernetes-sigs
 
 ```{note}
 - **Kubernetes:** Use the AMD-optimized KMM Operator provided by the GPU Operator Helm chart
+- **OpenShift:** Uses the [Red Hat KMM Operator](https://github.com/rh-ecosystem-edge/kernel-module-management) with OpenShift-specific optimizations
 ```
 
 ### Component Interaction
@@ -44,7 +49,7 @@ The components work together in the following sequence:
 5. Node Labeller adds detailed GPU information to node labels
 6. Metrics Exporter provides ongoing monitoring
 
-![Architecture diagram](./_static/amd-gpu-operator-diagram.png)
+[Placeholder: Architecture diagram]
 
 ## Plugins and Extensions
 
@@ -58,7 +63,7 @@ The [AMD GPU Device Plugin](https://github.com/ROCm/k8s-device-plugin) enables G
 
 ### Node Labeller
 
-The [Node Labeller](https://github.com/ROCm/k8s-device-plugin/blob/master/cmd/k8s-node-labeller/README.md) provides detailed GPU information through node labels:
+The [Node Labeller](https://github.com/ROCm/k8s-device-plugin/blob/master/cmd/k8s-node-labeller/README) provides detailed GPU information through node labels:
 
 - Automatically detects GPU properties
 - Adds detailed GPU-specific labels to nodes
